@@ -44,5 +44,19 @@ cmp.setup({
     end, { 'i', 's' }),
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-y>'] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
-  }
+  },
+  sources = {
+		{ name = "nvim_lua" },
+		{ name = "nvim_lsp" },
+		{ name = "tags" },
+		{ name = "treesitter" },
+		{ name = "path" },
+		{ name = "rg" },
+		{ name = "spell" },
+		{ name = "cmp_git" },
+		{ name = "emoji" },
+		{ name = "buffer" },
+		{ name = "calc" },
+	},
+	experimental = { ghost_text = true },
 })

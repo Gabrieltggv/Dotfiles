@@ -35,8 +35,37 @@ local start_apps = function(use)
 	})
     use({
     'hrsh7th/nvim-cmp',
+    requires = {
+			"f3fora/cmp-spell",
+			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-calc",
+			"hrsh7th/cmp-emoji",
+			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/cmp-nvim-lua",
+			"hrsh7th/cmp-path",
+            'nvim-lua/plenary.nvim',
+			"quangnguyen30192/cmp-nvim-tags",
+			"ray-x/cmp-treesitter",
+			"lukas-reineke/cmp-rg",
+			"petertriho/cmp-git",
+		},
     config = function()
       require('config.cmp')
+    end,
+  })
+  use({
+    'kyazdani42/nvim-tree.lua',
+    requires = 'kyazdani42/nvim-web-devicons',
+    config = function()
+      require('config.nvimtree')
+    end,
+  })
+  use({
+    'nvim-telescope/telescope.nvim',
+    requires = { { 'nvim-lua/popup.nvim' }, { 'nvim-lua/plenary.nvim' } },
+    event = 'VimEnter',
+    config = function()
+      require('config.telescope')
     end,
   })
 end
