@@ -25,6 +25,20 @@ local start_apps = function(use)
 			require("config.themegithub")
 		end
 	})
+    use({ 'hrsh7th/cmp-nvim-lsp' })
+    use({
+		"neovim/nvim-lspconfig",
+		requires = { { "williamboman/nvim-lsp-installer" } },
+		config = function()
+			require("config.lsp")
+		end,
+	})
+    use({
+    'hrsh7th/nvim-cmp',
+    config = function()
+      require('config.cmp')
+    end,
+  })
 end
 
 return require('packer').startup(start_apps)

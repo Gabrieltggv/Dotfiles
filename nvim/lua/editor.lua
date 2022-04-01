@@ -24,6 +24,8 @@ local function set_options()
 		cursorline = true,
 		swapfile = false,
         backup = false,
+        list = true,
+        listchars = 'tab:→ ,trail:•,extends:»,precedes:«',
 		expandtab = true,
 		foldenable = false,
 		hidden = true,
