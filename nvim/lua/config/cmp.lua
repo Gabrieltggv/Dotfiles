@@ -10,7 +10,7 @@ local feedkey = function(key, mode)
 end
 
 cmp.setup({
-  completion = { autocomplete = false, completeopt = 'menu,menuone,noinsert' },
+  completion = { autocomplete = true, completeopt = 'menu,menuone,noinsert' },
   documentation = {
     winhighlight = 'NormalFloat:CmpDocumentation,FloatBorder:CmpDocumentationBorder',
     border = 'rounded',

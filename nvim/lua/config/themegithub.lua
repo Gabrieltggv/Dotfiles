@@ -1,5 +1,5 @@
 require("github-theme").setup({
-  theme_style = "dark",
+  theme_style = "dark_colorblind",
   function_style = "italic",
   sidebars = {"qf", "vista_kind", "terminal", "packer"},
 
@@ -9,7 +9,7 @@ require("github-theme").setup({
   -- Overwrite the highlight groups
   overrides = function(c)
     return {
-      htmlTag = {fg = c.red, bg = "#282c34", sp = c.hint, style = "underline"},
+      htmlTag = {fg = c.red},
       DiagnosticHint = {link = "LspDiagnosticsDefaultHint"},
       -- this will remove the highlight groups
       TSField = {},

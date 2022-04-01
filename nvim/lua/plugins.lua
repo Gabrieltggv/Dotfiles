@@ -68,6 +68,9 @@ local start_apps = function(use)
       require('config.telescope')
     end,
   })
+  use({ 'hrsh7th/cmp-vsnip' })
+  use({ 'hrsh7th/vim-vsnip' })
+  use({ 'rafamadriz/friendly-snippets', event = 'InsertCharPre' })
 end
 
 return require('packer').startup(start_apps)

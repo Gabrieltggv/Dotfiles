@@ -1,6 +1,5 @@
 vim.g.nvim_tree_group_empty = 1
 vim.g.nvim_tree_highlight_opened_files = 1
-
 vim.g.nvim_tree_special_files = {}
 vim.g.nvim_tree_root_folder_modifier = ':p:~'
 
