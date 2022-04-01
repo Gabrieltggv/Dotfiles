@@ -71,6 +71,22 @@ local start_apps = function(use)
   use({ 'hrsh7th/cmp-vsnip' })
   use({ 'hrsh7th/vim-vsnip' })
   use({ 'rafamadriz/friendly-snippets', event = 'InsertCharPre' })
+  use({
+    'rcarriga/nvim-notify',
+    config = function()
+      require('config.notify')
+      vim.notify = require('notify')
+    end,
+  })
+  use({
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate',
+    config = function()
+      require('config.treesitter')
+    end,
+  })
+  use({ 'nvim-treesitter/playground' })
+  use({ 'windwp/nvim-ts-autotag' })
 end
 
 return require('packer').startup(start_apps)
