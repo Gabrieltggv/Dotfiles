@@ -34,8 +34,8 @@ local start_apps = function(use)
 		end,
 	})
     use({
-    'hrsh7th/nvim-cmp',
-    requires = {
+        'hrsh7th/nvim-cmp',
+        requires = {
 			"f3fora/cmp-spell",
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-calc",
@@ -49,44 +49,96 @@ local start_apps = function(use)
 			"lukas-reineke/cmp-rg",
 			"petertriho/cmp-git",
 		},
-    config = function()
-      require('config.cmp')
-    end,
-  })
-  use({
-    'kyazdani42/nvim-tree.lua',
-    requires = 'kyazdani42/nvim-web-devicons',
-    config = function()
-      require('config.nvimtree')
-    end,
-  })
-  use({
-    'nvim-telescope/telescope.nvim',
-    requires = { { 'nvim-lua/popup.nvim' }, { 'nvim-lua/plenary.nvim' } },
-    event = 'VimEnter',
-    config = function()
-      require('config.telescope')
-    end,
-  })
-  use({ 'hrsh7th/cmp-vsnip' })
-  use({ 'hrsh7th/vim-vsnip' })
-  use({ 'rafamadriz/friendly-snippets', event = 'InsertCharPre' })
-  use({
-    'rcarriga/nvim-notify',
-    config = function()
-      require('config.notify')
-      vim.notify = require('notify')
-    end,
-  })
-  use({
-    'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate',
-    config = function()
-      require('config.treesitter')
-    end,
-  })
-  use({ 'nvim-treesitter/playground' })
-  use({ 'windwp/nvim-ts-autotag' })
+        config = function()
+            require('config.cmp')
+        end,
+    })
+    use({
+        'kyazdani42/nvim-tree.lua',
+        requires = 'kyazdani42/nvim-web-devicons',
+        config = function()
+            require('config.nvimtree')
+        end,
+    })
+    use({
+        'nvim-telescope/telescope.nvim',
+        requires = {
+            { 'nvim-lua/popup.nvim' }, 
+            { 'nvim-lua/plenary.nvim' } 
+        },
+        event = 'VimEnter',
+        config = function()
+        require('config.telescope')
+        end,
+    })
+    use({ 'hrsh7th/cmp-vsnip' })
+    use({ 'hrsh7th/vim-vsnip' })
+    use(
+        { 
+            'rafamadriz/friendly-snippets', 
+            event = 'InsertCharPre' 
+        }
+    )
+    use({
+        'rcarriga/nvim-notify',
+        config = function()
+        require('config.notify')
+        vim.notify = require('notify')
+        end,
+    })
+    use({
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate',
+        config = function()
+        require('config.treesitter')
+        end,
+    })
+    use({ 'nvim-treesitter/playground' })
+    use({ 'windwp/nvim-ts-autotag' })
+    use({
+        'kyazdani42/nvim-tree.lua',
+        requires = 'kyazdani42/nvim-web-devicons',
+        config = function()
+            require('config.nvimtree')
+        end,
+    })
+    use({
+        'nvim-telescope/telescope.nvim',
+        requires = {
+            { 'nvim-lua/popup.nvim' }, 
+            { 'nvim-lua/plenary.nvim' } 
+        },
+        event = 'VimEnter',
+        config = function()
+            require('config.telescope')
+        end,
+    })
+    use({ 'hrsh7th/cmp-vsnip' })
+    use({ 'hrsh7th/vim-vsnip' })
+    use({ 'rafamadriz/friendly-snippets', event = 'InsertCharPre' })
+    use({
+        'rcarriga/nvim-notify',
+        config = function()
+        require('config.notify')
+            vim.notify = require('notify')
+        end,
+    })
+    use({
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate',
+        config = function()
+            require('config.treesitter')
+        end,
+    })
+    use({ 'nvim-treesitter/playground' })
+    use({ 'windwp/nvim-ts-autotag' })
+    use({
+        'akinsho/bufferline.nvim',
+        requires = 'kyazdani42/nvim-web-devicons',
+        config = function()
+			require("config.buferline")
+		end,
+    })
 end
 
 return require('packer').startup(start_apps)
