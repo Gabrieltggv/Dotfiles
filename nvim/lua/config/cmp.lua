@@ -32,8 +32,8 @@ cmp.setup({
       elseif has_words_before() then
         cmp.complete()
       else
-        fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
-      end
+        fallback()
+        end
     end, { 'i', 's' }),
     ['<C-p>'] = cmp.mapping(function()
       if cmp.visible() then

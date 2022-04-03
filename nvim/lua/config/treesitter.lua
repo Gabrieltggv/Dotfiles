@@ -24,6 +24,7 @@ require('nvim-treesitter.configs').setup({
     'javascript',
     'python',
     'json',
+    'vue',
     'markdown',
     'html',
   },

@@ -1,3 +1,4 @@
+local vim = vim
 local packer_path = "/site/pack/packer/start/packer.nvim"
 local install_path = vim.fn.stdpath("data") .. packer_path
 
@@ -53,49 +54,13 @@ local start_apps = function(use)
             require('config.cmp')
         end,
     })
-    use({
-        'kyazdani42/nvim-tree.lua',
-        requires = 'kyazdani42/nvim-web-devicons',
-        config = function()
-            require('config.nvimtree')
-        end,
-    })
-    use({
-        'nvim-telescope/telescope.nvim',
-        requires = {
-            { 'nvim-lua/popup.nvim' }, 
-            { 'nvim-lua/plenary.nvim' } 
-        },
-        event = 'VimEnter',
-        config = function()
-        require('config.telescope')
-        end,
-    })
-    use({ 'hrsh7th/cmp-vsnip' })
-    use({ 'hrsh7th/vim-vsnip' })
     use(
-        { 
-            'rafamadriz/friendly-snippets', 
-            event = 'InsertCharPre' 
+        {
+            'rafamadriz/friendly-snippets',
+            event = 'InsertCharPre'
         }
     )
     use({
-        'rcarriga/nvim-notify',
-        config = function()
-        require('config.notify')
-        vim.notify = require('notify')
-        end,
-    })
-    use({
-        'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate',
-        config = function()
-        require('config.treesitter')
-        end,
-    })
-    use({ 'nvim-treesitter/playground' })
-    use({ 'windwp/nvim-ts-autotag' })
-    use({
         'kyazdani42/nvim-tree.lua',
         requires = 'kyazdani42/nvim-web-devicons',
         config = function()
@@ -105,8 +70,8 @@ local start_apps = function(use)
     use({
         'nvim-telescope/telescope.nvim',
         requires = {
-            { 'nvim-lua/popup.nvim' }, 
-            { 'nvim-lua/plenary.nvim' } 
+            { 'nvim-lua/popup.nvim' },
+            { 'nvim-lua/plenary.nvim' }
         },
         event = 'VimEnter',
         config = function()
@@ -115,12 +80,10 @@ local start_apps = function(use)
     })
     use({ 'hrsh7th/cmp-vsnip' })
     use({ 'hrsh7th/vim-vsnip' })
-    use({ 'rafamadriz/friendly-snippets', event = 'InsertCharPre' })
     use({
         'rcarriga/nvim-notify',
         config = function()
-        require('config.notify')
-            vim.notify = require('notify')
+            require('config.notifications')
         end,
     })
     use({
@@ -131,13 +94,39 @@ local start_apps = function(use)
         end,
     })
     use({ 'nvim-treesitter/playground' })
-    use({ 'windwp/nvim-ts-autotag' })
+    use({
+        'windwp/nvim-ts-autotag',
+        config = function()
+			require("nvim-ts-autotag").setup()
+		end,
+    })
     use({
         'akinsho/bufferline.nvim',
         requires = 'kyazdani42/nvim-web-devicons',
         config = function()
 			require("config.buferline")
 		end,
+    })
+    use({
+        "nvim-lualine/lualine.nvim",
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+        config = function()
+            require("config.lline")
+        end,
+    })
+    use ({
+      'sudormrfbin/cheatsheet.nvim',
+      requires = {
+        {'nvim-telescope/telescope.nvim'},
+        {'nvim-lua/popup.nvim'},
+        {'nvim-lua/plenary.nvim'},
+      },
+    })
+    use({
+        'norcalli/nvim-colorizer.lua',
+        config = function()
+            require('colorizer').setup()
+        end,
     })
 end
 

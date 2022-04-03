@@ -1,5 +1,7 @@
+local vim = vim
 local function set_globals()
 	vim.g.mapleader = " "
+    vim.cmd("set guifont=Cascadia\\ Code\\ Light,Hack\\ Nerd\\ Font")
 end
 
 local function set_mappings()
@@ -7,6 +9,13 @@ local function set_mappings()
 	local mappings = {
 		{ "n", "<leader>,", "<Cmd>nohl<CR>", opts },
 		{ "n", "<leader>ls", "'0<CR>", opts },
+		{ "n", "<leader>s", 'viw<esc>a"<esc>bi"<esc>lel', opts },
+		{ "", ">", ">gv", {} },
+		{ "", "<", "<gv", {} },
+		{ "n", "<C-j>", ":m .+1<CR>==", opts },
+		{ "n", "<C-k>", ":m .-2<CR>==", opts },
+        { "v", "J", ":m '>+1<CR>gv=gv", opts },
+		{ "v", "K", ":m '<-2<CR>gv=gv", opts },
 	}
 
 	for _, val in pairs(mappings) do
@@ -32,6 +41,7 @@ local function set_options()
 		ignorecase = true,
 		mouse = "a",
 		number = true,
+        relativenumber = true,
 		scrolloff = 5,
 		shell = "/bin/fish",
 		shiftwidth = 4,
