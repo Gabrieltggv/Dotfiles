@@ -95,12 +95,6 @@ local start_apps = function(use)
     })
     use({ 'nvim-treesitter/playground' })
     use({
-        'windwp/nvim-ts-autotag',
-        config = function()
-			require("nvim-ts-autotag").setup()
-		end,
-    })
-    use({
         'akinsho/bufferline.nvim',
         requires = 'kyazdani42/nvim-web-devicons',
         config = function()
@@ -127,6 +121,12 @@ local start_apps = function(use)
         'norcalli/nvim-colorizer.lua',
         config = function()
             require('colorizer').setup()
+        end,
+    })
+    use({
+        "windwp/nvim-autopairs",
+        config = function()
+            require('nvim-autopairs').setup()
         end,
     })
 end
