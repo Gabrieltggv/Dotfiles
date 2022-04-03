@@ -109,6 +109,7 @@ local start_apps = function(use)
     })
     use({
         "nvim-lualine/lualine.nvim",
+        after = "github-nvim-theme",
         requires = { 'kyazdani42/nvim-web-devicons', opt = true },
         config = function()
             require("config.lline")

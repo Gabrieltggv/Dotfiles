@@ -2,7 +2,7 @@ require("lualine").setup({
 	options = {
 		section_separators = { "", "" },
 		component_separators = { "", "" },
-		theme = "dark_colorblind",
+		theme = "auto",
 	},
 	sections = {
 		lualine_a = { "mode" },
