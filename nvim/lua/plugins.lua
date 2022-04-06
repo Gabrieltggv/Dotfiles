@@ -54,6 +54,12 @@ local start_apps = function(use)
             require('config.cmp')
         end,
     })
+    use({
+            'honza/vim-snippets',
+    })
+    use({
+            'L3MON4D3/LuaSnip',
+    })
     use(
         {
             'rafamadriz/friendly-snippets',
@@ -145,6 +151,7 @@ local start_apps = function(use)
             })
         end,
     })
+
 end
 
 return require('packer').startup(start_apps)
