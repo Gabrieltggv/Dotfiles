@@ -28,13 +28,6 @@ require('nvim-treesitter.configs').setup({
     'markdown',
     'html',
   },
-  autotag = {
-        enable = true,
-        filetypes = {
-            'html',
-            'vue',
-        }
-  },
   indent = { enable = true },
   highlight = {
     -- `false` will disable the whole extension

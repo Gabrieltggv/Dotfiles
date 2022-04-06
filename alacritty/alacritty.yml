@@ -75,14 +75,12 @@ font:
 
   # The bold font face
   bold:
-    family: Fira Code
     style: Medium
     # family: "Fira Code"
     # family: "Source Code Pro"
 
   # The italic font face
   italic:
-    family: Fira Code
     style: "Light Italic"
     # style: "Light Oblique"
     # family: "Fira Code"

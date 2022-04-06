@@ -129,6 +129,22 @@ local start_apps = function(use)
             require('nvim-autopairs').setup()
         end,
     })
+    use({
+      "lewis6991/gitsigns.nvim",
+      requires = { "nvim-lua/plenary.nvim" },
+      config = function()
+        require('gitsigns').setup()
+      end,
+    })
+    use({
+        'kyazdani42/nvim-web-devicons',
+        config = function()
+            require('nvim-web-devicons').get_icons()
+            require('nvim-web-devicons').setup({
+                default = true,
+            })
+        end,
+    })
 end
 
 return require('packer').startup(start_apps)
