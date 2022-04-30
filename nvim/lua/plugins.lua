@@ -151,7 +151,54 @@ local start_apps = function(use)
             })
         end,
     })
-
+    use({
+        'numToStr/Comment.nvim',
+        config = function()
+          require('Comment').setup()
+        end,
+    })
+    use({
+        'mattn/emmet-vim',
+    })
+    -- Mostra linhas de indentação
+    use({
+        'lukas-reineke/indent-blankline.nvim',
+        config = function()
+          require('indent_blankline').setup {
+            show_current_context = true
+          }
+        end
+    })
+    use ({
+        'ray-x/lsp_signature.nvim',
+        config = function()
+          require ('lsp_signature').setup()
+        end
+    })
+    use({
+        'akinsho/flutter-tools.nvim',
+        config = function()
+          require("flutter-tools").setup()
+        end
+    })
+    use({
+        "Pocco81/DAPInstall.nvim",
+        commit = "24923c3"
+    })
+    use({
+        "mfussenegger/nvim-dap",
+        requires = {
+            "theHamsta/nvim-dap-virtual-text",
+            "rcarriga/nvim-dap-ui",
+            "mfussenegger/nvim-dap-python",
+            "folke/which-key.nvim",
+            "nvim-telescope/telescope-dap.nvim",
+            { "jbyuki/one-small-step-for-vimkind", module = "osv" },
+        },
+        config = function()
+            require("config.dapl")
+        end,
+    })
 end
 
 return require('packer').startup(start_apps)

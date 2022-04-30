@@ -1,5 +1,6 @@
 local actions = require("telescope.actions")
-require("telescope").setup({ 
+local telescope = require("telescope")
+telescope.setup({
     defaults = {
     selection_caret = '❯ ',
     entry_prefix = '  ',
@@ -15,6 +16,8 @@ require("telescope").setup({
     mappings = { i = { ['<esc>'] = actions.close, ['<C-q>'] = actions.smart_send_to_qflist + actions.open_qflist } },
   },
 })
+
+telescope.load_extension("flutter")
 
 local opts = { noremap = true }
 local mappings = {
