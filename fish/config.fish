@@ -8,3 +8,5 @@ if type -q pyenv
 end
 
 load_nvm
+
+set -gx  LC_ALL en_US.UTF-8
