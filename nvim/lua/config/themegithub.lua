@@ -1,5 +1,5 @@
 require("github-theme").setup({
-  theme_style = "dark_colorblind",
+  theme_style = "light_colorblind",
   transparent = false,
   function_style = "italic",
   sidebars = {"qf", "vista_kind", "terminal", "packer"},

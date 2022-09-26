@@ -23,6 +23,7 @@ require('nvim-treesitter.configs').setup({
     'yaml',
     'javascript',
     'python',
+    'kotlin',
     'json',
     'vue',
     'markdown',

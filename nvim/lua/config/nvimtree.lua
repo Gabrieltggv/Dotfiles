@@ -1,13 +1,14 @@
 local vim = vim
-vim.g.nvim_tree_group_empty = 1
-vim.g.nvim_tree_highlight_opened_files = 1
-vim.g.nvim_tree_special_files = {}
-vim.g.nvim_tree_root_folder_modifier = ':p:~'
 
 require('nvim-tree').setup({
   diagnostics = { enable = true },
-  tab_open = true,
-  auto_close = true,
+  renderer = {
+		highlight_opened_files = 'all',
+		add_trailing = true,
+        root_folder_modifier = ':p:~',
+        group_empty = true,
+  },
+  open_on_tab = true,
   view = {
     width = 30,
     side = 'left',
