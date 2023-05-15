@@ -15,4 +15,4 @@ SUBSYSTEM=="usb",ATTR{idVendor}=="04e8",ATTR{idProduct}=="6860",SYMLINK+="androi
 SUBSYSTEM=="usb",ATTR{idVendor}=="04e8",ATTR{idProduct}=="6860",SYMLINK+="android_fastboot"
 """
 
-source /opt/asdf-vm/asdf.fish
+set -gx GPG_TTY (tty)

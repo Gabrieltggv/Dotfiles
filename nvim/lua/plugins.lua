@@ -114,12 +114,12 @@ local start_apps = function(use)
             require("config.themegithub")
         end,
     })
-    use({
-        'mfussenegger/nvim-jdtls',
-        config = function()
-            require('config.java')
-        end,
-    })
+    -- use({
+    --     'mfussenegger/nvim-jdtls',
+    --     config = function()
+    --         require('config.java')
+    --     end,
+    -- })
     --    use ({
     --      'sudormrfbin/cheatsheet.nvim',
     --      requires = {

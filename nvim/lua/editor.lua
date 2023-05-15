@@ -9,7 +9,7 @@ local function set_mappings()
 	local mappings = {
 		{ "n", "<leader>,", "<Cmd>nohl<CR>", opts },
 		{ "n", "<leader>ls", "'0<CR>", opts },
-		{ "n", "<leader>s", 'viw<esc>a"<esc>bi"<esc>lel', opts },
+		{ "n", "<leader>s", "viw<esc>a'<esc>bi'<esc>lel", opts },
 		{ "", ">", ">gv", {} },
 		{ "", "<", "<gv", {} },
 		{ "n", "<C-j>", ":m .+1<CR>==", opts },
@@ -43,7 +43,7 @@ local function set_options()
 		number = true,
         relativenumber = true,
 		scrolloff = 5,
-		shell = "/bin/fish",
+		shell = "/home/gabriel/.nix-profile/bin/fish",
 		shiftwidth = 4,
 		smartcase = true,
 		smartindent = true,
