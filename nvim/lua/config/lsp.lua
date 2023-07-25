@@ -38,7 +38,6 @@ local opts = {
             opts)
         buf_set_keymap('n', ']d', "<cmd>lua vim.diagnostic.goto_next({float={border='rounded'}})<CR>", opts)
         buf_set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.set_loclist()<CR>', opts)
-        buf_set_keymap('n', '<space>ff', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
         -- stylua: ignore end
 
         vim.cmd('setlocal omnifunc=v:lua.vim.lsp.omnifunc')
@@ -59,9 +58,9 @@ local servers = {
     'jsonls',
     'yamlls',
     'html',
+    'eslint',
     'emmet_ls',
     'pyright',
-    'sumneko_lua',
     'dockerls',
 }
 
